@@ -29,6 +29,18 @@ const questions: Question[] = [
     question: "Qui était surnommé le 'Second Maître' après Aristote ?",
     options: ["Ibn Sina", "Al-Khawarizmi", "Al-Farabi", "Ibn Rushd"],
     correctAnswer: 2
+  },
+  {
+    id: 4,
+    question: "Quel instrument astronomique était utilisé pour la navigation ?",
+    options: ["La boussole", "L'astrolabe", "Le cadran solaire", "Le sextant"],
+    correctAnswer: 1
+  },
+  {
+    id: 5,
+    question: "Quelle ville abritait la 'Maison de la Sagesse' ?",
+    options: ["Cordoue", "Bagdad", "Le Caire", "Damas"],
+    correctAnswer: 1
   }
 ];
 

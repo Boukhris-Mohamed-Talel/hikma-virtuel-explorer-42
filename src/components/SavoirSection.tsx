@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Scholar from "./Scholar";
 import ScholarModal from "./ScholarModal";
@@ -80,18 +79,27 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
   const artworks = [
     {
       title: "Astrolabe persan",
-      description: "Instrument astronomique utilisé pour la navigation et le calcul du temps",
-      image: "/photo-1465146344425-f00d5f5c8f07"
+      description: "Instrument astronomique de précision utilisé pour la navigation et les calculs astronomiques",
+      image: "/lovable-uploads/de10c8ac-b7b2-4c0a-a603-20624e486961.png",
+      period: "Xe siècle"
     },
     {
       title: "Manuscrit du Canon d'Avicenne",
-      description: "Page enluminée du célèbre traité médical",
-      image: "/photo-1473177104440-ffee2f376098" 
+      description: "Page enluminée du traité médical le plus influent de l'histoire islamique",
+      image: "/lovable-uploads/48f949c1-ff51-4cd6-851d-39c131c84d5e.png",
+      period: "XIe siècle"
     },
     {
-      title: "Carte astronomique d'Al-Biruni",
-      description: "Représentation des constellations et des corps célestes",
-      image: "/photo-1472396961693-142e6e269027"
+      title: "Le livre des étoiles fixes",
+      description: "Traité d'astronomie d'Abd al-Rahmân al-Sûfî",
+      image: "/lovable-uploads/5a9b019c-0177-4e62-8648-85cf49f7fba9.png",
+      period: "903-986"
+    },
+    {
+      title: "Grande Mosquée de Bagdad",
+      description: "Chef-d'œuvre de l'architecture islamique",
+      image: "/lovable-uploads/b92abae8-2081-4d96-ac7b-f58e6e36dbdf.png",
+      period: "VIIIe siècle"
     }
   ];
   
