@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				amiri: ['Amiri', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -51,6 +54,16 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				hikma: {
+					dark: '#0F2452',  // Deep night blue
+					primary: '#143982', // Royal blue
+					secondary: '#2A5298', // Medium blue
+					accent: '#F8D171', // Gold
+					sand: '#E6D7B9', // Sand color
+					cream: '#F5F1E8', // Light cream
+					night: '#121A2B', // Deep night
+					stars: '#FFFFFF' // Star white
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

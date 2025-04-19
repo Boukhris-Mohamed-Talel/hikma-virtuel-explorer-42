@@ -96,6 +96,99 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-hikma-night text-foreground;
   }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes reveal {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes unfold {
+  0% { 
+    opacity: 0;
+    max-height: 0;
+    transform: scaleY(0.1);
+    transform-origin: top;
+  }
+  100% { 
+    opacity: 1;
+    max-height: 1000px;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px 2px rgba(248, 209, 113, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 15px 5px rgba(248, 209, 113, 0.7);
+  }
+}
+
+.star {
+  @apply absolute bg-white rounded-full;
+  animation: twinkle cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.reveal {
+  animation: reveal 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.unfold {
+  animation: unfold 1.5s ease-out forwards;
+}
+
+.glow {
+  animation: glow 3s infinite;
+}
+
+.arabic-font {
+  font-family: 'Amiri', serif;
+}
+
+.parchment {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23E6D7B9" /><path d="M0 0h100v100H0z" fill="%23E6D7B9" /><path fill="%23D9C9A9" d="M0 0h1v1H0zm2 0h1v1H2zm2 0h1v1H4zm2 0h1v1H6zm2 0h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1z" /></svg>');
+}
+
+.door {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s;
+}
+
+.door:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(248, 209, 113, 0.1) 0%, rgba(248, 209, 113, 0.3) 100%);
+  z-index: -1;
+}
+
+.door:hover {
+  transform: scale(1.05);
+}
+
+.celestial-bg {
+  background: radial-gradient(ellipse at bottom, #143982 0%, #0F2452 50%, #121A2B 100%);
 }
