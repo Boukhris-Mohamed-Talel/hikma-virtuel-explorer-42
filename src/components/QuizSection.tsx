@@ -1,7 +1,8 @@
-
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { CircleCheck, CircleX } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 interface Question {
   id: number;
@@ -36,9 +37,34 @@ const QuizSection = () => {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   
+  const playCorrectSound = () => {
+    const audio = new Audio('/correct-answer.mp3');
+    audio.play();
+  };
+
+  const playIncorrectSound = () => {
+    const audio = new Audio('/incorrect-answer.mp3');
+    audio.play();
+  };
+  
   const handleAnswerClick = (selectedAnswer: number) => {
-    if (selectedAnswer === questions[currentQuestion].correctAnswer) {
+    const isCorrect = selectedAnswer === questions[currentQuestion].correctAnswer;
+    
+    if (isCorrect) {
       setScore(score + 1);
+      playCorrectSound();
+      toast({
+        title: "Bonne réponse !",
+        description: "Continuez ainsi !",
+        duration: 2000,
+      });
+    } else {
+      playIncorrectSound();
+      toast({
+        title: "Pas tout à fait...",
+        description: "Essayez encore !",
+        duration: 2000,
+      });
     }
     
     if (currentQuestion + 1 < questions.length) {
@@ -87,8 +113,13 @@ const QuizSection = () => {
                 <Button
                   key={index}
                   onClick={() => handleAnswerClick(index)}
-                  className="w-full text-left bg-hikma-secondary/50 hover:bg-hikma-secondary"
+                  className="w-full text-left bg-hikma-secondary/50 hover:bg-hikma-secondary flex items-center gap-2"
                 >
+                  {index === questions[currentQuestion].correctAnswer ? (
+                    <CircleCheck className="h-5 w-5" />
+                  ) : (
+                    <CircleX className="h-5 w-5" />
+                  )}
                   {option}
                 </Button>
               ))}

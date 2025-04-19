@@ -5,6 +5,8 @@ import ProblemStatement from "./ProblemStatement";
 import SdgSection from "./SdgSection";
 import MuseumMap from "./MuseumMap";
 import SavoirSection from "./SavoirSection";
+import SanteSection from "./SanteSection";
+import VillesSection from "./VillesSection";
 
 type Stage = "intro" | "problem" | "sdg" | "map" | "section";
 
@@ -34,14 +36,16 @@ const Hall = () => {
     setStage("map");
   };
   
-  // Determine which section component to render
   const renderSectionContent = () => {
     if (!selectedSection) return null;
     
     switch (selectedSection) {
       case "savoir":
         return <SavoirSection onBack={handleBackToMap} />;
-      // Other sections will be added later
+      case "sante":
+        return <SanteSection onBack={handleBackToMap} />;
+      case "villes":
+        return <VillesSection onBack={handleBackToMap} />;
       default:
         return (
           <div className="min-h-screen w-full celestial-bg p-8 flex items-center justify-center">
