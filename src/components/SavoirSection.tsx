@@ -1,7 +1,9 @@
-
 import { useState } from "react";
 import Scholar from "./Scholar";
 import ScholarModal from "./ScholarModal";
+import QuizSection from "./QuizSection";
+import { Volume2 } from "lucide-react";
+import { Button } from "./ui/button";
 
 interface Scholar {
   id: string;
@@ -17,6 +19,7 @@ interface SavoirSectionProps {
 
 const SavoirSection = ({ onBack }: SavoirSectionProps) => {
   const [selectedScholar, setSelectedScholar] = useState<Scholar | null>(null);
+  const [showQuiz, setShowQuiz] = useState(false);
   
   const scholars: Scholar[] = [
     {
@@ -65,6 +68,11 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
     }
   ];
   
+  const playAmbientSound = () => {
+    const audio = new Audio('/ambient-islamic.mp3');
+    audio.play();
+  };
+  
   return (
     <div className="min-h-screen w-full celestial-bg p-8">
       <button 
@@ -76,14 +84,25 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
       
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl text-hikma-accent font-bold mb-2">Les Savoirs en Partage</h1>
-          <p className="text-xl text-hikma-sand italic">
+          <h1 className="text-3xl md:text-4xl text-hikma-accent font-bold mb-2">
+            Les Savoirs en Partage
+          </h1>
+          <p className="text-xl text-hikma-sand italic mb-4">
             "À Bagdad, Cordoue ou Samarcande, on ne collectionnait pas l'or, mais les livres."
           </p>
+          <Button
+            onClick={playAmbientSound}
+            className="bg-hikma-secondary/50 hover:bg-hikma-secondary"
+          >
+            <Volume2 className="mr-2" />
+            Ambiance sonore
+          </Button>
         </div>
         
         <div className="mb-16">
-          <h2 className="text-2xl text-white font-semibold mb-6">Portraits interactifs de savants</h2>
+          <h2 className="text-2xl text-white font-semibold mb-6">
+            Portraits interactifs de savants
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
             {scholars.map((scholar) => (
               <Scholar 
@@ -95,6 +114,17 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
               />
             ))}
           </div>
+        </div>
+        
+        <div className="mb-16">
+          <Button
+            onClick={() => setShowQuiz(!showQuiz)}
+            className="mb-8 bg-hikma-accent hover:bg-hikma-accent/80"
+          >
+            {showQuiz ? "Masquer le quiz" : "Tester vos connaissances"}
+          </Button>
+          
+          {showQuiz && <QuizSection />}
         </div>
         
         <div className="text-center py-8">
