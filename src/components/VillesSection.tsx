@@ -1,8 +1,7 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { City, Building } from "lucide-react";
+import { Building, Home, School } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 
@@ -54,7 +53,7 @@ const VillesSection = ({ onBack }: { onBack: () => void }) => {
             onClick={playAmbientSound}
             className="bg-hikma-accent hover:bg-hikma-accent/80 mb-8"
           >
-            <City className="mr-2 h-4 w-4" />
+            <Building className="mr-2 h-4 w-4" />
             Ambiance de Souk
           </Button>
         </div>
@@ -93,12 +92,12 @@ const VillesSection = ({ onBack }: { onBack: () => void }) => {
                 <p className="text-hikma-sand">Système de dotation pour les biens publics</p>
               </div>
               <div className="text-center">
-                <Building className="h-8 w-8 mx-auto text-hikma-accent mb-2" />
+                <Home className="h-8 w-8 mx-auto text-hikma-accent mb-2" />
                 <h3 className="text-white font-bold mb-2">Hammam</h3>
                 <p className="text-hikma-sand">Bains publics et lieu de socialisation</p>
               </div>
               <div className="text-center">
-                <Building className="h-8 w-8 mx-auto text-hikma-accent mb-2" />
+                <School className="h-8 w-8 mx-auto text-hikma-accent mb-2" />
                 <h3 className="text-white font-bold mb-2">Souk</h3>
                 <p className="text-hikma-sand">Organisation économique et sociale</p>
               </div>

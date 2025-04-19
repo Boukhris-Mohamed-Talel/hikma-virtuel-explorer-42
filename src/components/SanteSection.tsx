@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { Hospital, Medicine, FlaskRound } from "lucide-react";
+import { Hospital, Bandage, Ambulance } from "lucide-react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { useToast } from "@/hooks/use-toast";
@@ -20,7 +20,7 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
     {
       nom: "Miel et Nigelle",
       description: "Une combinaison puissante utilisée pour renforcer l'immunité",
-      icon: <Medicine className="h-6 w-6 text-hikma-accent" />
+      icon: <Bandage className="h-6 w-6 text-hikma-accent" />
     },
     {
       nom: "Hijama",
@@ -30,7 +30,7 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
     {
       nom: "Eau de Rose",
       description: "Utilisée pour ses propriétés apaisantes et anti-inflammatoires",
-      icon: <FlaskRound className="h-6 w-6 text-hikma-accent" />
+      icon: <Ambulance className="h-6 w-6 text-hikma-accent" />
     }
   ];
 
