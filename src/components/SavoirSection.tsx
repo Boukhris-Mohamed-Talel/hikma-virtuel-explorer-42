@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Scholar from "./Scholar";
 import ScholarModal from "./ScholarModal";
@@ -6,6 +5,7 @@ import QuizSection from "./QuizSection";
 import QuotesWall from "./QuotesWall";
 import HistoricalArtifact from "./HistoricalArtifact";
 import VideoPreview from "./VideoPreview";
+import Sculpture3D from "./Sculpture3D";
 import { Volume2, Circle, Video, Lightbulb, Book, Star, Clock } from "lucide-react";
 import { Button } from "./ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
@@ -127,6 +127,16 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
       modern: "Le Neil deGrasse Tyson médiéval.",
       image: "/lovable-uploads/95756837-5ff6-4db4-a2ba-34bfdde34846.png",
       explanation: "Ce polymathe passionné par l'astronomie et la physique serait aujourd'hui un vulgarisateur scientifique charismatique expliquant les mystères de l'univers."
+    }
+  ];
+  
+  const sculptures = [
+    {
+      title: "Statue 3D – Avicenna (Ibn Sina)",
+      sketchfabUrl: "https://sketchfab.com/3d-models/avicenna-ibn-sina-387bcc4327564cf6ad34ef8c75e585ac?utm_medium=embed&utm_campaign=share-popup&utm_content=387bcc4327564cf6ad34ef8c75e585ac",
+      creditUrl: "https://sketchfab.com/nurainiwaheedah?utm_medium=embed&utm_campaign=share-popup&utm_content=387bcc4327564cf6ad34ef8c75e585ac",
+      creditName: "nurainiwaheedah",
+      modelUrl: "https://sketchfab.com/models/387bcc4327564cf6ad34ef8c75e585ac/embed"
     }
   ];
   
@@ -270,7 +280,6 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
                 <Circle className="text-hikma-accent mr-2 h-4 w-4" />
                 Œuvres et artefacts
               </h2>
-              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {artworks.map((artwork, index) => (
                   <HistoricalArtifact 
@@ -279,6 +288,16 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
                     description={artwork.description}
                     image={artwork.image}
                     period={artwork.period}
+                  />
+                ))}
+                {sculptures.map((sculpt, idx) => (
+                  <Sculpture3D
+                    key={idx}
+                    title={sculpt.title}
+                    sketchfabUrl={sculpt.sketchfabUrl}
+                    creditUrl={sculpt.creditUrl}
+                    creditName={sculpt.creditName}
+                    modelUrl={sculpt.modelUrl}
                   />
                 ))}
               </div>
