@@ -79,7 +79,7 @@ const ModernTikTokTab = () => (
             {s.tiktok.map((line, i) => (
               <div key={i} className="flex items-start gap-2 mb-1">
                 <span className="text-lg">{line.icon}</span>
-                <span className="text-sm text-hikma-sand">{line.text}</span>
+                <span className="text-sm text-gray-800">{line.text}</span>
               </div>
             ))}
           </div>
@@ -87,7 +87,7 @@ const ModernTikTokTab = () => (
             {s.future.map((line, i) => (
               <div key={i} className="flex items-start gap-2 mb-1">
                 <span className="text-lg">{line.icon}</span>
-                <span className="text-sm text-hikma-sand">{line.text}</span>
+                <span className="text-sm text-gray-800">{line.text}</span>
               </div>
             ))}
           </div>
