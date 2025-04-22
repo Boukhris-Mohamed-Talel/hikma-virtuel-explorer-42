@@ -1,11 +1,16 @@
+
 import { useState } from "react";
 import Scholar from "./Scholar";
 import ScholarModal from "./ScholarModal";
 import QuizSection from "./QuizSection";
-import { Volume2, Circle, Play, Video } from "lucide-react";
+import QuotesWall from "./QuotesWall";
+import HistoricalArtifact from "./HistoricalArtifact";
+import VideoPreview from "./VideoPreview";
+import { Volume2, Circle, Video, Lightbulb, Book, Star, Clock } from "lucide-react";
 import { Button } from "./ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { Card, CardContent } from "./ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
 interface Scholar {
   id: string;
@@ -23,7 +28,8 @@ interface SavoirSectionProps {
 const SavoirSection = ({ onBack }: SavoirSectionProps) => {
   const [selectedScholar, setSelectedScholar] = useState<Scholar | null>(null);
   const [showQuiz, setShowQuiz] = useState(false);
-  const [showArtworks, setShowArtworks] = useState(false);
+  const [showQuotes, setShowQuotes] = useState(false);
+  const [activeTab, setActiveTab] = useState("scholars");
   
   const scholars: Scholar[] = [
     {
@@ -103,21 +109,30 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
     }
   ];
   
+  const modernComparisons = [
+    {
+      scholar: "Ibn Sina (Avicenne)",
+      modern: "Un influenceur bien-être entre TEDx et Dr Good!",
+      image: "/lovable-uploads/3ecdbe4b-230b-4f7f-bd49-988c9b177303.png",
+      explanation: "Avec ses connaissances médicales et son approche holistique, Ibn Sina serait aujourd'hui une célébrité de la santé avec des millions d'abonnés sur les réseaux sociaux."
+    },
+    {
+      scholar: "Al-Khawarizmi",
+      modern: "Un dev chez Google.",
+      image: "/lovable-uploads/9a65f8ba-2854-4abf-b428-16d748d3b77f.png",
+      explanation: "L'inventeur des algorithmes serait aujourd'hui un développeur star créant les systèmes qui alimentent nos recherches et nos applications."
+    },
+    {
+      scholar: "Al-Biruni",
+      modern: "Le Neil deGrasse Tyson médiéval.",
+      image: "/lovable-uploads/95756837-5ff6-4db4-a2ba-34bfdde34846.png",
+      explanation: "Ce polymathe passionné par l'astronomie et la physique serait aujourd'hui un vulgarisateur scientifique charismatique expliquant les mystères de l'univers."
+    }
+  ];
+  
   const playAmbientSound = () => {
     const audio = new Audio('/ambient-islamic.mp3');
     audio.play();
-  };
-  
-  const playVideoPreview = () => {
-    // Simulation d'une vidéo (en production, vous utiliseriez une vraie vidéo)
-    const toast = document.createElement('div');
-    toast.className = 'fixed top-4 right-4 bg-hikma-primary border border-hikma-accent p-4 rounded-lg z-50';
-    toast.innerHTML = 'Chargement de la vidéo "L\'âge d\'or scientifique"...';
-    document.body.appendChild(toast);
-    
-    setTimeout(() => {
-      document.body.removeChild(toast);
-    }, 3000);
   };
   
   return (
@@ -146,66 +161,130 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
               Ambiance sonore
             </Button>
             <Button 
-              onClick={playVideoPreview}
+              onClick={() => setShowQuotes(!showQuotes)}
               className="bg-hikma-accent/70 hover:bg-hikma-accent"
             >
-              <Video className="mr-2" />
-              Vidéo: L'âge d'or
+              <Star className="mr-2" />
+              {showQuotes ? "Masquer les citations" : "Mur des citations"}
             </Button>
           </div>
         </div>
         
-        <div className="mb-16">
-          <h2 className="text-2xl text-white font-semibold mb-6 flex items-center">
-            <Circle className="text-hikma-accent mr-2 h-4 w-4" />
-            Portraits interactifs de savants
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-            {scholars.map((scholar) => (
-              <Scholar 
-                key={scholar.id}
-                name={scholar.name}
-                description={scholar.description}
-                period={scholar.period}
-                image={scholar.image}
-                onClick={() => setSelectedScholar(scholar)}
-              />
-            ))}
+        {showQuotes && (
+          <div className="mb-12 animate-fade-in">
+            <QuotesWall />
           </div>
-        </div>
+        )}
         
-        <div className="mb-16">
-          <h2 className="text-2xl text-white font-semibold mb-6 flex items-center">
-            <Circle className="text-hikma-accent mr-2 h-4 w-4" />
-            Œuvres et artefacts
-          </h2>
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
+          <TabsList className="grid w-full grid-cols-3 bg-hikma-primary/60">
+            <TabsTrigger value="scholars" className="data-[state=active]:bg-hikma-accent">
+              <Book className="mr-2 h-4 w-4" /> Savants
+            </TabsTrigger>
+            <TabsTrigger value="comparisons" className="data-[state=active]:bg-hikma-accent">
+              <Clock className="mr-2 h-4 w-4" /> Savants VS Aujourd'hui
+            </TabsTrigger>
+            <TabsTrigger value="artifacts" className="data-[state=active]:bg-hikma-accent">
+              <Lightbulb className="mr-2 h-4 w-4" /> Artefacts
+            </TabsTrigger>
+          </TabsList>
           
-          <Carousel className="w-full max-w-3xl mx-auto">
-            <CarouselContent>
-              {artworks.map((artwork, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card className="bg-hikma-primary/60 backdrop-blur-sm border-hikma-accent hover:scale-105 transition-transform">
-                      <CardContent className="flex flex-col items-center justify-center p-2">
-                        <img 
-                          src={artwork.image} 
-                          alt={artwork.title} 
-                          className="object-cover h-64 w-full rounded-md mb-3" 
-                        />
-                        <div className="text-center">
-                          <h3 className="text-hikma-accent font-medium text-lg">{artwork.title}</h3>
-                          <p className="text-hikma-sand text-sm">{artwork.description}</p>
+          <TabsContent value="scholars">
+            <div>
+              <h2 className="text-2xl text-white font-semibold mb-6 flex items-center">
+                <Circle className="text-hikma-accent mr-2 h-4 w-4" />
+                Portraits interactifs de savants
+              </h2>
+              <p className="text-hikma-sand mb-6 text-center bg-hikma-primary/40 p-3 rounded-lg border border-hikma-accent/30">
+                Cliquez sur un savant pour découvrir sa biographie, une vidéo courte, des fun facts sur ses découvertes et pourquoi son travail est encore utile aujourd'hui.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+                {scholars.map((scholar) => (
+                  <Scholar 
+                    key={scholar.id}
+                    name={scholar.name}
+                    description={scholar.description}
+                    period={scholar.period}
+                    image={scholar.image}
+                    onClick={() => setSelectedScholar(scholar)}
+                  />
+                ))}
+              </div>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="comparisons">
+            <div>
+              <h2 className="text-2xl text-white font-semibold mb-6 flex items-center">
+                <Circle className="text-hikma-accent mr-2 h-4 w-4" />
+                Savants VS Aujourd'hui – Anecdotes Fun & Comparaisons
+              </h2>
+              <p className="text-hikma-sand mb-6 text-center bg-hikma-primary/40 p-3 rounded-lg border border-hikma-accent/30">
+                Format TikTok: Comment ces génies de l'âge d'or islamique s'intégreraient dans notre monde moderne?
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {modernComparisons.map((comparison, index) => (
+                  <div key={index} className="bg-hikma-primary/60 backdrop-blur-sm border border-hikma-accent/50 rounded-lg overflow-hidden hover:scale-105 transition-transform">
+                    <div className="relative h-48">
+                      <img 
+                        src={comparison.image} 
+                        alt={comparison.scholar}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-hikma-primary to-transparent opacity-80"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-3">
+                        <h3 className="text-hikma-accent font-medium text-lg">{comparison.scholar}</h3>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <div className="flex gap-2 items-start mb-3">
+                        <div className="bg-hikma-accent text-hikma-primary p-1 rounded-full">
+                          <Clock className="h-4 w-4" />
                         </div>
-                      </CardContent>
-                    </Card>
+                        <p className="text-white text-lg font-semibold">
+                          {comparison.modern}
+                        </p>
+                      </div>
+                      <p className="text-hikma-sand text-sm">
+                        {comparison.explanation}
+                      </p>
+                    </div>
                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-0" />
-            <CarouselNext className="right-0" />
-          </Carousel>
-        </div>
+                ))}
+              </div>
+              
+              <div className="mt-8">
+                <VideoPreview 
+                  title="L'héritage scientifique du monde arabo-musulman" 
+                  thumbnail="/lovable-uploads/b92abae8-2081-4d96-ac7b-f58e6e36dbdf.png"
+                  videoUrl="https://www.youtube.com/embed/A84U5WiJB-4"
+                />
+              </div>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="artifacts">
+            <div>
+              <h2 className="text-2xl text-white font-semibold mb-6 flex items-center">
+                <Circle className="text-hikma-accent mr-2 h-4 w-4" />
+                Œuvres et artefacts
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {artworks.map((artwork, index) => (
+                  <HistoricalArtifact 
+                    key={index}
+                    title={artwork.title}
+                    description={artwork.description}
+                    image={artwork.image}
+                    period={artwork.period}
+                  />
+                ))}
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
         
         <div className="mb-16">
           <Button
@@ -227,11 +306,19 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
             </li>
             <li className="flex items-center justify-center gap-2">
               <Circle className="text-hikma-accent h-3 w-3" />
-              Mur des citations en calligraphie animée
+              Mini-jeu "Quel savant es-tu ?"
             </li>
             <li className="flex items-center justify-center gap-2">
               <Circle className="text-hikma-accent h-3 w-3" />
-              Mini-jeu "Quel savant es-tu ?"
+              Expérience VR: Opération chirurgicale au 10ème siècle
+            </li>
+            <li className="flex items-center justify-center gap-2">
+              <Circle className="text-hikma-accent h-3 w-3" />
+              Encyclopédie interactive des plantes médicinales
+            </li>
+            <li className="flex items-center justify-center gap-2">
+              <Circle className="text-hikma-accent h-3 w-3" />
+              Reconstitution sonore d'une salle de consultation médiévale
             </li>
           </ul>
         </div>
