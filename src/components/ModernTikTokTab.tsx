@@ -1,3 +1,4 @@
+
 import { Clapperboard, Hash, ThumbsUp, Play } from "lucide-react";
 
 const scholars = [
@@ -70,7 +71,7 @@ const ModernTikTokTab = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {scholars.map((s, idx) => (
         <div key={s.id} className={`rounded-lg shadow p-4 ${s.color} flex flex-col gap-2`}>
-          <h3 className="text-xl font-bold text-hikma-accent mb-1">{s.name}</h3>
+          <h3 className="text-xl font-bold text-gray-900 mb-1">{s.name}</h3>
           <div className="mb-3">
             {s.tiktok.map((line, i) => (
               <div key={i} className="flex items-start gap-2 mb-1">

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Play, Pause, Circle, Video, Lightbulb, Clock } from "lucide-react";
@@ -133,13 +132,13 @@ const ScholarModal = ({ name, description, period, contributions, image, onClose
   const getVideoUrl = () => {
     switch (name) {
       case "Ibn Sina (Avicenne)":
-        return "https://www.youtube.com/embed/qJGrh7GzuYw";
+        return "https://www.youtube.com/embed/u5z5Utc2bt4";
       case "Al-Khawarizmi":
-        return "https://www.youtube.com/embed/qJGrh7GzuYw";
+        return "https://www.youtube.com/embed/Q6wp3zPjEQQ";
       case "Al-Farabi":
-        return "https://www.youtube.com/embed/qJGrh7GzuYw";
+        return "https://www.youtube.com/embed/KtyLkUCB5Bc";
       case "Ibn Rushd (Averroès)":
-        return "https://www.youtube.com/embed/qJGrh7GzuYw";
+        return "https://www.youtube.com/embed/eZj8hQLGOqQ";
       default:
         return "https://www.youtube.com/embed/qJGrh7GzuYw";
     }
