@@ -14,6 +14,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import ScholarsGrid from "./ScholarsGrid";
 import ModernComparisons from "./ModernComparisons";
 import ArtifactsSection from "./ArtifactsSection";
+import SavoirHeader from "./SavoirHeader";
+import ScholarsTab from "./ScholarsTab";
+import SoonSection from "./SoonSection";
+import ArtifactsTab from "./ArtifactsTab";
+import ModernTikTokTab from "./ModernTikTokTab";
 
 interface Scholar {
   id: string;
@@ -150,45 +155,19 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
   
   return (
     <div className="min-h-screen w-full celestial-bg p-8">
-      <button 
-        onClick={onBack}
-        className="mb-8 text-hikma-sand hover:text-hikma-accent flex items-center gap-2"
-      >
-        ← Retour à la carte du musée
-      </button>
-      
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl text-hikma-accent font-bold mb-2">
-            Les Savoirs en Partage
-          </h1>
-          <p className="text-xl text-hikma-sand italic mb-4">
-            "À Bagdad, Cordoue ou Samarcande, on ne collectionnait pas l'or, mais les livres."
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
-            <Button
-              onClick={playAmbientSound}
-              className="bg-hikma-secondary/50 hover:bg-hikma-secondary"
-            >
-              <Volume2 className="mr-2" />
-              Ambiance sonore
-            </Button>
-            <Button 
-              onClick={() => setShowQuotes(!showQuotes)}
-              className="bg-hikma-accent/70 hover:bg-hikma-accent"
-            >
-              <Star className="mr-2" />
-              {showQuotes ? "Masquer les citations" : "Mur des citations"}
-            </Button>
-          </div>
-        </div>
-        
+        <SavoirHeader
+          onBack={onBack}
+          onPlayAmbient={playAmbientSound}
+          onToggleQuotes={() => setShowQuotes(!showQuotes)}
+          showQuotes={showQuotes}
+        />
         {showQuotes && (
           <div className="mb-12 animate-fade-in">
             <QuotesWall />
           </div>
         )}
-        
+
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-12">
           <TabsList className="grid w-full grid-cols-3 bg-hikma-primary/60">
             <TabsTrigger value="scholars" className="data-[state=active]:bg-hikma-accent">
@@ -201,23 +180,17 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
               <Lightbulb className="mr-2 h-4 w-4" /> Artefacts
             </TabsTrigger>
           </TabsList>
-          
           <TabsContent value="scholars">
-            <ScholarsGrid 
-              scholars={scholars}
-              onSelect={setSelectedScholar}
-            />
+            <ScholarsTab data={scholars} />
           </TabsContent>
-          
           <TabsContent value="comparisons">
-            <ModernComparisons comparisons={modernComparisons} />
+            <ModernTikTokTab />
           </TabsContent>
-          
           <TabsContent value="artifacts">
-            <ArtifactsSection artworks={artworks} sculptures={sculptures} />
+            <ArtifactsTab artworks={artworks} sculptures={sculptures} />
           </TabsContent>
         </Tabs>
-        
+
         <div className="mb-16">
           <Button
             onClick={() => setShowQuiz(!showQuiz)}
@@ -225,47 +198,11 @@ const SavoirSection = ({ onBack }: SavoirSectionProps) => {
           >
             {showQuiz ? "Masquer le quiz" : "Tester vos connaissances"}
           </Button>
-          
           {showQuiz && <QuizSection />}
         </div>
-        
-        <div className="text-center py-8 bg-hikma-primary/40 backdrop-blur-sm rounded-lg border border-hikma-accent/30 mb-16">
-          <h3 className="text-xl text-hikma-accent mb-4">À découvrir bientôt</h3>
-          <ul className="text-white space-y-2">
-            <li className="flex items-center justify-center gap-2">
-              <Circle className="text-hikma-accent h-3 w-3" />
-              Reconstruction 3D de la Maison de la Sagesse de Bagdad
-            </li>
-            <li className="flex items-center justify-center gap-2">
-              <Circle className="text-hikma-accent h-3 w-3" />
-              Mini-jeu "Quel savant es-tu ?"
-            </li>
-            <li className="flex items-center justify-center gap-2">
-              <Circle className="text-hikma-accent h-3 w-3" />
-              Expérience VR: Opération chirurgicale au 10ème siècle
-            </li>
-            <li className="flex items-center justify-center gap-2">
-              <Circle className="text-hikma-accent h-3 w-3" />
-              Encyclopédie interactive des plantes médicinales
-            </li>
-            <li className="flex items-center justify-center gap-2">
-              <Circle className="text-hikma-accent h-3 w-3" />
-              Reconstitution sonore d'une salle de consultation médiévale
-            </li>
-          </ul>
-        </div>
+
+        <SoonSection />
       </div>
-      
-      {selectedScholar && (
-        <ScholarModal 
-          name={selectedScholar.name}
-          description={selectedScholar.description}
-          period={selectedScholar.period}
-          contributions={selectedScholar.contributions}
-          image={selectedScholar.image}
-          onClose={() => setSelectedScholar(null)}
-        />
-      )}
     </div>
   );
 };
