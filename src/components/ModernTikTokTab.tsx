@@ -1,4 +1,3 @@
-
 import { Clapperboard, Hash, ThumbsUp, Play } from "lucide-react";
 
 const scholars = [
@@ -9,14 +8,13 @@ const scholars = [
     img: "/lovable-uploads/efb3b311-4fa9-4df6-b124-798a6e78a5e4.png",
     imageSection: 0, // left
     tiktok: [
-      { icon: "🎥", text: '[transition type "glow up"]' },
       { icon: "📲", text: "Yo les amis, ici Ibn Sina, aka Avicenne, toubib des toubibs 👨‍⚕️💫" },
-      { icon: "💬", text: "Tu tousses ? T’inquiète, j’ai écrit Le Canon de la Médecine avant que ça soit stylé. Et devine quoi ? J’ai aussi parlé de santé mentale y’a 1000 ans. Pas mal pour un gars du XIe siècle, hein ?" }
+      { icon: "💬", text: "Tu tousses ? T'inquiète, j'ai écrit Le Canon de la Médecine avant que ça soit stylé. Et devine quoi ? J'ai aussi parlé de santé mentale y'a 1000 ans. Pas mal pour un gars du XIe siècle, hein ?" }
     ],
     future: [
-      { icon: "🔮", text: "Aujourd’hui ?" },
-      { icon: "✨", text: "C’est LE Dr Good version halal ! TEDx, podcast, conseils ayurvédiques revisités, tips sur le sommeil et même une collab avec Doctolib." },
-      { icon: "📈", text: "5M d’abonnés sur Insta. DM ouverts pour un diagnostic 💌" }
+      { icon: "🔮", text: "Aujourd'hui ?" },
+      { icon: "✨", text: "C'est LE Dr Good version halal ! TEDx, podcast, conseils ayurvédiques revisités, tips sur le sommeil et même une collab avec Doctolib." },
+      { icon: "📈", text: "5M d'abonnés sur Insta. DM ouverts pour un diagnostic 💌" }
     ]
   },
   {
@@ -26,12 +24,11 @@ const scholars = [
     img: "/lovable-uploads/efb3b311-4fa9-4df6-b124-798a6e78a5e4.png",
     imageSection: 1, // center
     tiktok: [
-      { icon: "🎥", text: '[cut rapide façon “dev life”]' },
-      { icon: "📲", text: "Al-Khwarizmi ici, ou juste ‘Algo’ pour les potes de la Silicon Valley 👨‍💻" },
-      { icon: "💬", text: "Tu kiffes les algorithmes Insta, YouTube ou TikTok ? Bah devine quoi : c’est moi le daron de tout ça 😎" }
+      { icon: "📲", text: "Al-Khwarizmi ici, ou juste 'Algo' pour les potes de la Silicon Valley 👨‍💻" },
+      { icon: "💬", text: "Tu kiffes les algorithmes Insta, YouTube ou TikTok ? Bah devine quoi : c'est moi le daron de tout ça 😎" }
     ],
     future: [
-      { icon: "🚀", text: "Aujourd’hui ?" },
+      { icon: "🚀", text: "Aujourd'hui ?" },
       { icon: "💻", text: "Il code chez Google, mais chill sur Twitch le soir pour expliquer les maths comme un boss." },
       { icon: "📊", text: "Il a une appli pour aider les élèves à kiffer les équations (et il bug jamais, lui)." }
     ]
@@ -43,14 +40,13 @@ const scholars = [
     img: "/lovable-uploads/efb3b311-4fa9-4df6-b124-798a6e78a5e4.png",
     imageSection: 2, // right
     tiktok: [
-      { icon: "🎥", text: '[transition avec une galaxie qui s’ouvre]' },
-      { icon: "📲", text: "Salam ! C’est Al-Biruni, l’astronome OG 🌠🔭" },
-      { icon: "💬", text: "J’ai mesuré la circonférence de la Terre... avec un bâton. Et toi t’as une calculette pour compter ta note au partiel ? 😂" }
+      { icon: "📲", text: "Salam ! C'est Al-Biruni, l'astronome OG 🌠🔭" },
+      { icon: "💬", text: "J'ai mesuré la circonférence de la Terre... avec un bâton. Et toi t'as une calculette pour compter ta note au partiel ? 😂" }
     ],
     future: [
-      { icon: "🌍", text: "Aujourd’hui ?" },
-      { icon: "📺", text: "C’est le Neil deGrasse Tyson du monde arabe. Il anime une série Netflix style Cosmos, mais avec plus de turbans et de télescopes artisanaux." },
-      { icon: "🔮", text: "Entre deux explications sur la gravité, il drop des punchlines philosophiques sur l’origine de l’univers." }
+      { icon: "🌍", text: "Aujourd'hui ?" },
+      { icon: "📺", text: "C'est le Neil deGrasse Tyson du monde arabe. Il anime une série Netflix style Cosmos, mais avec plus de turbans et de télescopes artisanaux." },
+      { icon: "🔮", text: "Entre deux explications sur la gravité, il drop des punchlines philosophiques sur l'origine de l'univers." }
     ]
   }
 ];
