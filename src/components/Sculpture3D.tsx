@@ -25,12 +25,12 @@ const Sculpture3D = ({
             frameBorder="0"
             allowFullScreen
             allow="autoplay; fullscreen; xr-spatial-tracking"
-            mozallowfullscreen="true"
-            webkitallowfullscreen="true"
-            xr-spatial-tracking="true"
-            execution-while-out-of-viewport="true"
-            execution-while-not-rendered="true"
-            web-share="true"
+            data-mozallowfullscreen="true"
+            data-webkitallowfullscreen="true"
+            data-xr-spatial-tracking="true"
+            data-execution-while-out-of-viewport="true"
+            data-execution-while-not-rendered="true"
+            data-web-share="true"
             src={modelUrl}
             className="rounded-lg w-full h-full"
           ></iframe>
@@ -61,4 +61,3 @@ const Sculpture3D = ({
 );
 
 export default Sculpture3D;
-
