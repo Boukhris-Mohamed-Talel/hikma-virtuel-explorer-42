@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import StarryBackground from "./StarryBackground";
 import Introduction from "./Introduction";
@@ -31,7 +32,7 @@ const Hall = () => {
     setTimeout(() => {
       setSelectedSection(section);
       setStage("section");
-    }, 300);
+    }, 1000); // Increased to 1000ms to match the door animation duration
   };
   
   const handleBackToMap = () => {

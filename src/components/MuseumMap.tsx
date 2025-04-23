@@ -26,7 +26,7 @@ const MuseumMap = ({ onSelectSection }: MuseumMapProps) => {
                boxShadow: "inset 0 0 50px rgba(0,0,0,0.5), 0 0 30px rgba(0,0,0,0.7)"
              }}>
           
-          {/* Museum wing layout with doors */}
+          {/* Museum door layout */}
           <div className="flex flex-wrap gap-16 justify-center items-end">
             {sections.map((section) => (
               <div 
