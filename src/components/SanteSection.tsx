@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -167,7 +168,7 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
                         className="w-full flex items-center justify-start gap-3 bg-hikma-secondary/50 hover:bg-hikma-secondary"
                       >
                         {remede.icon}
-                        {remede.nom}
+                        <span className="text-white font-medium">{remede.nom}</span>
                       </Button>
                     </HoverCardTrigger>
                     <HoverCardContent className="bg-hikma-primary border-hikma-accent w-80">
@@ -252,14 +253,8 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
                 <iframe
                   title="Bimaristan Nur Al Din, Pointcloud section"
                   frameBorder="0"
-                  allowFullScreen
+                  allowFullScreen={true}
                   allow="autoplay; fullscreen; xr-spatial-tracking"
-                  mozAllowFullScreen={true}
-                  webkitAllowFullScreen={true}
-                  xr-spatial-tracking="true"
-                  execution-while-out-of-viewport="true"
-                  execution-while-not-rendered="true"
-                  web-share="true"
                   src="https://sketchfab.com/models/2c88c9aae8d648478ea302626b79657b/embed"
                   className="rounded-lg w-full h-full"
                 ></iframe>
