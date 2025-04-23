@@ -84,9 +84,9 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
       image: "https://article19.ma/accueil/wp-content/uploads/2022/03/4B109B3E-4304-430A-930A-D3EB1751B482.jpeg"
     },
     {
-      title: "Jardin médicinal",
-      description: "Reconstitution d'un jardin de plantes médicinales",
-      image: "https://secrets-de-pranzac.fr/wp-content/uploads/2021/05/A1_1.jpg"
+      title: "Un manuscrit écrit par Ibn Zakaria Razi",
+      description: "Manuscrit ancien d'Ibn Zakariya al-Razi, illustrant ses contributions majeures à la médecine et à la chimie.",
+      image: "https://lh4.googleusercontent.com/proxy/92jz0_d20sXBN73_XkY5UhV7r1HJth2sUGOqgXFw5IhS_k__46HJVCGblT-DOhDQU_1ILFr3ME2Ca78T8cbHWZ8KTzi9WGzjnEiWessyg_TC6RhMaobehSt8S0XhfzabW1X_iw"
     }
   ];
 
@@ -167,7 +167,7 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
                         className="w-full flex items-center justify-start gap-3 bg-hikma-secondary/50 hover:bg-hikma-secondary"
                       >
                         {remede.icon}
-                        <span className="text-white font-medium">{remede.nom}</span>
+                        <span className="font-bold text-lg text-hikma-accent drop-shadow">{remede.nom}</span>
                       </Button>
                     </HoverCardTrigger>
                     <HoverCardContent className="bg-hikma-primary border-hikma-accent w-80">
