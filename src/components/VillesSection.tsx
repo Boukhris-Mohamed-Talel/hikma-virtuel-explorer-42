@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -47,7 +46,7 @@ const VillesSection = ({ onBack }: { onBack: () => void }) => {
     {
       nom: "Cordoue",
       description: "Centre intellectuel de l'Andalousie, connue pour sa Grande Mosquée",
-      image: "/photo-1466442929976-97f336a657be",
+      image: "https://cdn-imgix.headout.com/media/images/dcac2e96969db49cc8778390c2dbd3ed-23466-cordoba-day-trip-to-cordoba---mosque-from-seville-05.jpg?auto=format&w=1069.6000000000001&h=687.6&q=90&fit=crop&ar=14%3A9&crop=faces",
       faits: [
         "Au 10ème siècle, Cordoue comptait 70 bibliothèques",
         "Sa Grande Mosquée pouvait accueillir 40 000 fidèles",
@@ -57,7 +56,7 @@ const VillesSection = ({ onBack }: { onBack: () => void }) => {
     {
       nom: "Bagdad",
       description: "Capitale du savoir, abritant la Maison de la Sagesse",
-      image: "/photo-1492321936769-b49830bc1d1e",
+      image: "https://static.wikia.nocookie.net/assassinscreed/images/1/18/ACMI_Maison_de_la_Sagesse.png/revision/latest?cb=20231013174322&path-prefix=fr",
       faits: [
         "Capitale circulaire parfaite de 2 km de diamètre",
         "Centre mondial de traduction des textes anciens",
@@ -67,7 +66,7 @@ const VillesSection = ({ onBack }: { onBack: () => void }) => {
     {
       nom: "Fès",
       description: "Première université du monde : Al Quaraouiyine",
-      image: "/photo-1473177104440-ffee2f376098",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Al_Quaraouiyine.jpg/330px-Al_Quaraouiyine.jpg",
       faits: [
         "Université fondée en 859 par Fatima Al-Fihri",
         "Système d'adduction d'eau sophistiqué",
@@ -80,17 +79,17 @@ const VillesSection = ({ onBack }: { onBack: () => void }) => {
     {
       title: "Maquette de Bagdad",
       description: "Reconstitution de la ville ronde",
-      image: "/photo-1472396961693-142e6e269027"
+      image: "https://external-preview.redd.it/TPLGL_4gcT2QUiQd__8wlLXfgNgWchSd8BP-abxZf7U.jpg?auto=webp&s=2a9d0e428086c5783d6c825070ccdc804da69a48"
     },
     {
       title: "Plan hydraulique de Fès",
       description: "Système d'eau et de fontaines",
-      image: "/photo-1465146344425-f00d5f5c8f07"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4GB53uMSHQRMirIKpfNyrkc4LwKUNta4HIw&s"
     },
     {
       title: "Grande Mosquée de Cordoue",
       description: "Modèle des arches caractéristiques",
-      image: "/photo-1473177104440-ffee2f376098"
+      image: "https://c8.alamy.com/comp/2C8X3WK/extrieur-de-la-mosque-de-cordoue-du-cot-de-la-calle-del-meson-del-sol-exterior-of-the-mosque-of-cordoba-next-to-calle-del-meson-del-sol-page-illustration-from-the-book-spain-lespagne-by-davillier-jean-charles-barn-1823-1883-dor-gustave-1832-1883-published-in-paris-france-by-libreria-hachette-in-1874-2C8X3WK.jpg"
     }
   ];
 
