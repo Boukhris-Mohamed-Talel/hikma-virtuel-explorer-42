@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -46,7 +47,7 @@ const VillesSection = ({ onBack }: { onBack: () => void }) => {
     {
       nom: "Cordoue",
       description: "Centre intellectuel de l'Andalousie, connue pour sa Grande Mosquée",
-      image: "https://cdn-imgix.headout.com/media/images/dcac2e96969db49cc8778390c2dbd3ed-23466-cordoba-day-trip-to-cordoba---mosque-from-seville-05.jpg?auto=format&w=1069.6000000000001&h=687.6&q=90&fit=crop&ar=14%3A9&crop=faces",
+      image: "https://patrimoinedorient.org/wp-content/uploads/2023/05/artiste-inconnu.jpg",
       faits: [
         "Au 10ème siècle, Cordoue comptait 70 bibliothèques",
         "Sa Grande Mosquée pouvait accueillir 40 000 fidèles",
@@ -79,7 +80,7 @@ const VillesSection = ({ onBack }: { onBack: () => void }) => {
     {
       title: "Maquette de Bagdad",
       description: "Reconstitution de la ville ronde",
-      image: "https://external-preview.redd.it/TPLGL_4gcT2QUiQd__8wlLXfgNgWchSd8BP-abxZf7U.jpg?auto=webp&s=2a9d0e428086c5783d6c825070ccdc804da69a48"
+      image: "https://patrimoinedorient.org/wp-content/uploads/2023/05/artiste-inconnu.jpg"
     },
     {
       title: "Plan hydraulique de Fès",
