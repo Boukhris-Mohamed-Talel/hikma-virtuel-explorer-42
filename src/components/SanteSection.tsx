@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -75,19 +74,19 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
   
   const sculptures = [
     {
-      title: "Le Canon d'Avicenne",
-      description: "Reproduction d'une page du célèbre traité médical",
-      image: "/photo-1473177104440-ffee2f376098"
+      title: "Qanûn d'Avicenne",
+      description: "Reproduction du célèbre traité médical",
+      image: "https://www.dicopathe.com/wp-content/uploads/2023/06/canon_avicenne_medecine_medievale_moyen-age_passion.jpg"
     },
     {
       title: "Instruments médicaux",
       description: "Collection d'outils chirurgicaux médiévaux",
-      image: "/photo-1465146344425-f00d5f5c8f07"
+      image: "https://article19.ma/accueil/wp-content/uploads/2022/03/4B109B3E-4304-430A-930A-D3EB1751B482.jpeg"
     },
     {
       title: "Jardin médicinal",
       description: "Reconstitution d'un jardin de plantes médicinales",
-      image: "/photo-1472396961693-142e6e269027"
+      image: "https://secrets-de-pranzac.fr/wp-content/uploads/2021/05/A1_1.jpg"
     }
   ];
 
@@ -291,7 +290,7 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="bg-hikma-secondary/20 p-3 rounded-lg">
                 <h3 className="text-hikma-accent font-medium mb-2">Architecture du bien-être</h3>
-                <p className="text-sm">Les bimaristans étaient conçus avec des cours intérieures, des jardins et des fontaines pour créer un environnement apaisant favorable à la guérison.</p>
+                <p className="text-sm">Les bimaristans étaient conçus avec des cours intérieurs, des jardins et des fontaines pour créer un environnement apaisant favorable à la guérison.</p>
               </div>
               <div className="bg-hikma-secondary/20 p-3 rounded-lg">
                 <h3 className="text-hikma-accent font-medium mb-2">Médecine holistique</h3>
