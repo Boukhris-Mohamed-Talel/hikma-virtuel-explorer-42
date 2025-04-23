@@ -27,8 +27,11 @@ const Hall = () => {
   };
   
   const handleSectionSelect = (section: string) => {
-    setSelectedSection(section);
-    setStage("section");
+    // We'll add a small delay to allow the door opening animation to complete
+    setTimeout(() => {
+      setSelectedSection(section);
+      setStage("section");
+    }, 300);
   };
   
   const handleBackToMap = () => {
