@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -130,7 +129,7 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
           <Card className="bg-hikma-primary/60 backdrop-blur-sm border-hikma-accent relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-hikma-primary/90 z-10"></div>
             <img 
-              src="/photo-1472396961693-142e6e269027" 
+              src="https://www.middleeasteye.net/sites/default/files/styles/max_2600x2600/public/images-story/ernest-board-albucasis-wellcome-collection.jpg.jpg?itok=tTgZiew4"
               alt="Ancien Bimaristan"
               className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-110 transition-transform duration-500"
             />
@@ -248,20 +247,52 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
             <DialogTitle className="text-hikma-accent">Bimaristan Virtuel</DialogTitle>
           </DialogHeader>
           <div className="text-hikma-sand">
-            <div className="relative w-full h-64 bg-hikma-secondary/30 mb-4 rounded-lg overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Play className="w-16 h-16 text-hikma-accent opacity-50 hover:opacity-100 transition-opacity cursor-pointer" />
-              </div>
-              <img 
-                src="/photo-1472396961693-142e6e269027" 
-                alt="Aperçu du Bimaristan" 
-                className="w-full h-full object-cover opacity-30"
-              />
-              <div className="absolute bottom-4 left-4 right-4 bg-hikma-primary/80 p-2 rounded">
-                <p className="text-sm">Visite virtuelle 3D d'un Bimaristan médiéval (en développement)</p>
+            <div className="relative w-full h-72 md:h-96 bg-hikma-secondary/30 mb-4 rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="sketchfab-embed-wrapper w-full h-full">
+                <iframe
+                  title="Bimaristan Nur Al Din, Pointcloud section"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; fullscreen; xr-spatial-tracking"
+                  mozAllowFullScreen={true}
+                  webkitAllowFullScreen={true}
+                  xr-spatial-tracking="true"
+                  execution-while-out-of-viewport="true"
+                  execution-while-not-rendered="true"
+                  web-share="true"
+                  src="https://sketchfab.com/models/2c88c9aae8d648478ea302626b79657b/embed"
+                  className="rounded-lg w-full h-full"
+                ></iframe>
               </div>
             </div>
-            
+            <div className="text-xs text-hikma-sand/70 mb-3 text-center">
+              <a
+                href="https://sketchfab.com/3d-models/bimaristan-nur-al-din-pointcloud-section-2c88c9aae8d648478ea302626b79657b?utm_medium=embed&utm_campaign=share-popup&utm_content=2c88c9aae8d648478ea302626b79657b"
+                target="_blank"
+                rel="nofollow"
+                className="font-bold hover:text-hikma-accent"
+              >
+                Bimaristan Nur Al Din, Pointcloud section
+              </a>
+              {" • par "}
+              <a
+                href="https://sketchfab.com/3dfovea?utm_medium=embed&utm_campaign=share-popup&utm_content=2c88c9aae8d648478ea302626b79657b"
+                target="_blank"
+                rel="nofollow"
+                className="font-bold hover:text-hikma-accent"
+              >
+                Fovea
+              </a>{" "}
+              sur{" "}
+              <a
+                href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=2c88c9aae8d648478ea302626b79657b"
+                target="_blank"
+                rel="nofollow"
+                className="font-bold hover:text-hikma-accent"
+              >
+                Sketchfab
+              </a>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="bg-hikma-secondary/20 p-3 rounded-lg">
                 <h3 className="text-hikma-accent font-medium mb-2">Architecture du bien-être</h3>
@@ -272,7 +303,6 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
                 <p className="text-sm">Le traitement incluait non seulement des médicaments, mais aussi la musique, les odeurs, les couleurs et l'environnement pour soigner l'ensemble du patient.</p>
               </div>
             </div>
-            
             <p className="italic text-center text-xs text-hikma-sand/70 mt-6">
               * Cette fonctionnalité est en cours de développement et sera disponible prochainement.
             </p>
@@ -284,4 +314,3 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
 };
 
 export default SanteSection;
-
