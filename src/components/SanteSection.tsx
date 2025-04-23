@@ -49,19 +49,19 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
       nom: "Miel et Nigelle",
       description: "Une combinaison puissante utilisée pour renforcer l'immunité et traiter diverses affections respiratoires. Le miel était considéré comme un remède universel, tandis que la nigelle était appelée 'la graine qui guérit de tout sauf la mort'.",
       icon: <Bandage className="h-6 w-6 text-hikma-accent" />,
-      image: "/photo-1472396961693-142e6e269027"
+      image: "https://www.lejardindebeyla.fr/wp-content/uploads/2024/05/Le-miel-au-Moyen-Age-Le-Jardin-de-Beyla.png"
     },
     {
       nom: "Hijama (Ventouses)",
       description: "Technique de médecine préventive et curative qui consiste à extraire le sang 'impur' à l'aide de ventouses. Cette pratique était largement utilisée pour soulager les douleurs musculaires, les migraines et améliorer la circulation sanguine.",
       icon: <Hospital className="h-6 w-6 text-hikma-accent" />,
-      image: "/photo-1465146344425-f00d5f5c8f07"
+      image: "https://i.natgeofe.com/n/8d541cd9-d8ed-472c-98cd-0ae48b4057cd/muslim-medicine-opener.jpg"
     },
     {
       nom: "Eau de Rose",
       description: "Utilisée pour ses propriétés apaisantes et anti-inflammatoires, l'eau de rose était un composant essentiel dans les traitements dermatologiques et ophtalmologiques. Elle était également utilisée comme tonique cardiaque et pour réduire le stress.",
       icon: <Ambulance className="h-6 w-6 text-hikma-accent" />,
-      image: "/photo-1473177104440-ffee2f376098"
+      image: "https://idata.over-blog.com/4/00/52/62/hypocras.jpg"
     }
   ];
   
@@ -284,3 +284,4 @@ const SanteSection = ({ onBack }: { onBack: () => void }) => {
 };
 
 export default SanteSection;
+
